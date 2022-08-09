@@ -1,0 +1,7 @@
+timm
+fastai
+wandb
+pytorch-lightning
+seaborn
+scikit-learn
+pytorch_metric_learning

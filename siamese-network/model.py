@@ -49,4 +49,3 @@ class SiameseNet(pl.LightningModule):
         val_loss = self.loss_fn(f1,f2,y)
         self.log("val_loss", val_loss)
         # return self.cos(f1, f2)
-        # return F.pairwise_distance(f1,f2, keepdim = True)

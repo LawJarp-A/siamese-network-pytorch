@@ -8,10 +8,12 @@ import torch, torchvision
 import torchvision.transforms as transforms
 from torch.utils.data import Dataset, DataLoader
 
+# Assuming that the input data is in form of a dataframe that has the image paths and class numbers as column
+
 class SiameseDataset(Dataset):
     def __init__(self, df, img_size = (224,224), normalize_img = False, in_channel = 3, is_valid=False, transform=None):
         self.files = list(df['file_path'])
-        self.labels = list(df['pair_num'])
+        self.labels = list(df['class_num'])
         # Create a dictionary mapping pair numbers to their files
         self.lbl2files = {l: [self.files[i] for i in range(len(df)) if self.labels[i] == l] for l in self.labels}
         self.is_valid = is_valid
